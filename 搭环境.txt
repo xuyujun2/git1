@@ -1,0 +1,46 @@
+进入npm官网，https://www.npmjs.com/  搜索要安装的包
+
+npm install --save redux react-redux redux-thunk：安装 react-redux和redux-thunk
+
+npm install --save react-router-dom：安装react-router-dom
+
+cnpm install antd --save：安装antd
+
+//npm install --save react-router-redux：安装react-router-redux
+
+//npm install --save react-router-config：安装react-router-config
+
+//npm install --save history：安装history
+
+
+在index.js里添加：
+import { Provider } from 'react-redux';
+import { LocaleProvider } from 'antd';
+import configureStore from './store/configureStore.js';
+import routes from './routes/routes.js';
+
+const store = configureStore();
+
+
+注释掉Index.js里的ReactDOM.render(<App />, document.getElementById('root'));
+index.js里添加：
+ReactDOM.render(
+    <Provider store={store}>
+        <App/>
+    </Provider>,
+    document.getElementById('root')
+);
+
+
+src文件夹里新建store文件夹新建configureStore.js
+src文件夹里新建reducers文件夹新建index.js
+
+
+配置proxy反向代理：
+cnpm install --save-dev http-proxy-middleware
+详细步骤见：https://blog.csdn.net/xiaoyao9524/article/details/85236550
+
+安装sass：
+cnpm install node-sass --save-dev
+cnpm install sass-loader --save-dev
+详见：https://blog.csdn.net/lgysjfs/article/details/83039906
